@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 100px; background: #f2f2f2; }
+    input { padding: 12px; margin: 10px; width: 260px; font-size: 18px; }
+    button { padding: 12px; width: 200px; background: green; border: none; color: white; font-size: 20px; border-radius: 6px; cursor: pointer; }
+    a { margin-top: 20px; display: block; font-size: 18px; }
+  </style>
+</head>
+<body>
+
+<h2>User Signup</h2>
+
+<input id="user" type="text" placeholder="Enter username" value="vinoba123">
+<br>
+<input id="pass" type="password" placeholder="Enter password" value="vinoba@2003">
+<br>
+<button onclick="signup()">Signup</button>
+
+<a href="login.html">Already have account? Login here</a>
+
+<script>
+  function signup() {
+    let u = document.getElementById("user").value.trim();
+    let p = document.getElementById("pass").value.trim();
+
+    if (u === "" || p === "") {
+      alert("Please fill all fields ❌");
+      return;
+    }
+
+    localStorage.setItem("savedUser", u);
+    localStorage.setItem("savedPass", p);
+
+    alert("Signup Successful ✔");
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>
